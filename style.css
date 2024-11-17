@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Poppins' , sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
     background-color: #c20f0f;
 }
@@ -73,6 +73,7 @@ body {
     color: #fff;
     font-weight: bold;
 }
+
 /* Hamburger Menu Styling */
 .hamburger {
     display: none;
@@ -89,8 +90,13 @@ body {
     background-color: #fff;
     border-radius: 5px;
 }
+
 /* Media Query untuk Smartphone */
 @media (max-width: 768px) {
+    .navbar {
+        display: none; /* Menyembunyikan menu navigasi pada layar kecil */
+    }
+
     .navbar-list {
         display: none;
         flex-direction: column;
@@ -110,18 +116,34 @@ body {
     .hamburger {
         display: flex;
     }
+
+    .header-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Profil Section */
+    .profil-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profil-image {
+        width: 100%; /* Mengatur gambar agar responsif */
+        max-width: 300px;
+        border-radius: 15px;
+    }
+
+    /* Kementrian Section */
+    .kementrian-list {
+        grid-template-columns: 1fr;
+    }
+
+    .kementrian-item {
+        padding: 10px;
+    }
 }
 
-/* Untuk tampilan menu setelah klik pada hamburger */
-.navbar-list li {
-    padding: 10px 15px;
-    text-align: center;
-}
-
-.navbar-list li a {
-    color: #fff;
-    font-weight: bold;
-}
 /* Hero Section */
 .hero {
     background: url('https://s3-alpha-sig.figma.com/img/0df3/8233/4f173c5b6d067b3b25d158fb59968f98?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QQwf7whA14z2WkkiKNwvmdQu7xSk6yjnvg~jDxUfJh3-dJNGYOI10y3JCJFPfJg2h4Fgn7x2E2MMnilmVVUbsk6i1PM44BiFHOc7eM1UY11jJCOnMLxk6LAN5jUTEDpm6vnCMv-qewATp2lc8hosFmMfI22408zhS9PIxVJNB0fM~MJX9WHxvYYt1F7PIvQLxDlKm9ccBDaWijRFQbo0o-N4QU5faeuheUa9uO0xwQidiyb3s7P3hooDfv9lcCjrXZkw~DbsTVMqrDkw--bD6YBv994aNAuhSKK733ojUzVAj2VLq-FPj5wpMggbLaLws74zpBtxHFse0S3EU71b~Q__') no-repeat center center/cover;
@@ -137,55 +159,6 @@ body {
     margin-top: 60px;
     text-align: center;
 }
-/* Animasi fade-in dan slide-up */
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Terapkan animasi pada hero-text */
-.hero-text h1, .hero-text h2 {
-    animation: fadeInSlideUp 1s ease-out forwards;
-    opacity: 0; /* Awalnya disembunyikan */
-}
-
-/* Delay untuk teks berikutnya */
-.hero-text h2:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.hero-text h1 {
-    margin: 20px 0;
-    font-size: 3rem;
-}
-
-.hero-text h2 {
-    margin: 10px 0;
-    font-size: 2rem;
-    font-weight: lighter;
-}
-
-
-.hero-text h2:nth-child(3) {
-    animation-delay: 1s;
-}
-
-
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 5;
-    text-transform: uppercase;
-}
-
-.hero-text h2 {
-    font-size: 2rem;
-    font-weight: lighter;
-}
 
 /* Profil Section */
 .profil-section {
@@ -197,19 +170,19 @@ body {
     border-radius: 25px 25px 0px 0px ;
     justify-content: space-around;
 }
+
 #typing-effect {
     font-size: 25px;
     line-height: 1.8;
     color: #f8f8f8;
-    border-right: 2px solid #f8f8f8; /* Efek kursor */
-    white-space: pre-wrap; /* Agar teks tetap dalam format paragraf */
+    border-right: 2px solid #f8f8f8;
+    white-space: pre-wrap;
     overflow: hidden;
 }
 
-
 .profil-container {
     display: flex;
-    border-radius: 50% ;
+    border-radius: 50%;
     align-items: center;
     gap: 20px;
 }
@@ -223,9 +196,9 @@ body {
     margin-bottom: 10px;
     font-size: 4rem;
     background: #121FCF;
-background: linear-gradient(to right, rgba(223, 42, 42, 0.7), rgba(212, 0, 0, 0.9));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, rgba(223, 42, 42, 0.7), rgba(212, 0, 0, 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .profil-content p {
@@ -233,23 +206,25 @@ background: linear-gradient(to right, rgba(223, 42, 42, 0.7), rgba(212, 0, 0, 0.
     line-height: 1.8;
     color: #f8f8f8;
 }
+
 .profil-image-wrapper {
-display: flex;
-text-align: center;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .profil-image-wrapper h2 {
     font-size: 3rem;
     margin-top: 5;
     background: #121FCF;
-background: linear-gradient(to right, rgba(223, 42, 42, 0.7), rgba(212, 0, 0, 0.9));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, rgba(223, 42, 42, 0.7), rgba(212, 0, 0, 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* kementrian */
+/* Kementrian */
 .kementrian-section {
     padding: 60px 20px;
     background: #f7f7f7;
