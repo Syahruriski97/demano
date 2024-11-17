@@ -15,4 +15,13 @@ Pemilihan nama INDRAPATRA untuk kabinet DEMA (Dewan Eksekutif Mahasiswa)  UIN Ar
     }
 
     typeText();
+    
 });
+// JavaScript untuk mengaktifkan menu hamburger
+const hamburger = document.getElementById('hamburger');
+const navbarList = document.querySelector('.navbar-list');
+
+hamburger.addEventListener('click', () => {
+    navbarList.classList.toggle('active');
+});
+
