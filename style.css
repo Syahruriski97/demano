@@ -73,7 +73,55 @@ body {
     color: #fff;
     font-weight: bold;
 }
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
 
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+/* Media Query untuk Smartphone */
+@media (max-width: 768px) {
+    .navbar-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    .navbar-list.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Untuk tampilan menu setelah klik pada hamburger */
+.navbar-list li {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.navbar-list li a {
+    color: #fff;
+    font-weight: bold;
+}
 /* Hero Section */
 .hero {
     background: url('https://s3-alpha-sig.figma.com/img/0df3/8233/4f173c5b6d067b3b25d158fb59968f98?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QQwf7whA14z2WkkiKNwvmdQu7xSk6yjnvg~jDxUfJh3-dJNGYOI10y3JCJFPfJg2h4Fgn7x2E2MMnilmVVUbsk6i1PM44BiFHOc7eM1UY11jJCOnMLxk6LAN5jUTEDpm6vnCMv-qewATp2lc8hosFmMfI22408zhS9PIxVJNB0fM~MJX9WHxvYYt1F7PIvQLxDlKm9ccBDaWijRFQbo0o-N4QU5faeuheUa9uO0xwQidiyb3s7P3hooDfv9lcCjrXZkw~DbsTVMqrDkw--bD6YBv994aNAuhSKK733ojUzVAj2VLq-FPj5wpMggbLaLws74zpBtxHFse0S3EU71b~Q__') no-repeat center center/cover;
